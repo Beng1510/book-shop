@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="lib/animate.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Ben's Book Store</title>
+</head>
+
+<body onload="onInit()">
+    <h1 class="animate animated animate bounceInDown" data-trans="main-title">Ben's Book Store</h1>
+
+    <h2 class="subtitle animate animated animate bounceInLeft" data-trans="subtitle">Welcome</h2>
+
+
+    <h3 class="animate animated animate bounceInRight" data-trans="select-lang">Select your Language</h3>
+
+    <select class="select-lang-dropdown" onchange="onSetLang(this.value)">
+        <option value="en">English</option>
+        <option value="he">עברית</option>
+        <option value="rs">РУССКИЙ</option>
+    </select>
+
+
+    <section class="add-book-container">
+        <h2 class="add-book" data-trans="add-book">Add A Book</h2>
+        <!-- <select name="book-name"></select> -->
+        <input class="form-control" data-trans="add-book-title" type="text" name="book-name" placeholder="Book Title" />
+        <input class="form-control" data-trans="add-book-price" type="number" name="book-price" placeholder="Price?" />
+        <button class="btn btn-outline-primary" data-trans="add-object" onclick="onAddBook()">Add</button>
+    </section>
+
+
+    <!-- the book shop  -->
+    <section class="books-container"></section>
+
+    <!-- the modal -->
+
+
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h2></h2>
+                    <h3></h3>
+                    <h4></h4>
+                    <p></p>
+                </div>
+                <div class="rate-book"></div><br>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- <div class="book-modal" hidden>
+        <h2></h2>
+       <h3><img src="/img/pic1.jpg"></h3>
+        <h4></h4>
+        <h6></h6>
+        <p></p>
+    
+        <div class="rate-book"></div><br>
+        <button class="btn btn-primary" onclick="onCloseModal()">Close</button>
+    </div>  -->
+
+    <footer>
+        Books 'R' US
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <script src="js/util-service.js"></script>
+    <script src="js/i18n-service.js"></script>
+    <script src="js/storage-service.js"></script>
+    <script src="js/book-service.js"></script>
+    <script src="js/book-controller.js"></script>
+
+</body>
+
+</html>
