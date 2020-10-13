@@ -97,7 +97,7 @@ function _createBooks() {
                 desc: "Hidden deep within, in the school lies an object that can make you immortal,that can make you powerful,that can make you deadly!",
                 rate: 0,
                 publishedAt: 1448693940000,
-                labels: ["Fantasy", "Adventure"],
+                labels: ["Fantasy" , " Adventure"],
             },
             {
                 id: makeId(),
@@ -107,7 +107,7 @@ function _createBooks() {
                 desc: "You don't know what you've got 'til it's...",
                 rate: 0,
                 publishedAt: 1448693940000,
-                labels: ["Thriller", "Crime"],
+                labels: ["Thriller" , " Crime"],
             },
             {
                 id: makeId(),
@@ -117,7 +117,7 @@ function _createBooks() {
                 desc: "We did everything just the way grown-ups would have... what went wrong?",
                 rate: 0,
                 publishedAt: 1448693940000,
-                labels: ["Psychological Fiction", "Allegorical"],
+                labels: ["Psychological Fiction" , " Allegorical"],
             },
             {
                 id: makeId(),
@@ -127,7 +127,7 @@ function _createBooks() {
                 desc: "Every clue will take him deeper",
                 rate: 0,
                 publishedAt: 1448693940000,
-                labels: ["Action", "Puzzle"],
+                labels: ["Action" , " Puzzle"],
             },
             {
                 id: makeId(),
@@ -137,7 +137,7 @@ function _createBooks() {
                 desc: "When you play the game of thrones, you win or you die. You win or you die.",
                 rate: 0,
                 publishedAt: 1448693940000,
-                labels: ["Action", "Fantasy"],
+                labels: ["Action" , " Fantasy"],
             },
         ]
         // gBooks = books

@@ -74,11 +74,11 @@ var gTrans = {
         rs: 'удалять',
         he: 'מחק',
     },
-    // '': {
-    //     en: 'Actions',
-    //     rs: 'Estas Seguru?',
-    //     he: 'פעולות?',
-    // },
+    'Book Rating': {
+        en: 'Book Rating',
+        rs: 'Estas Seguru?',
+        he: 'דירוג?',
+    },
     // 'Actions': {
     //     en: 'Actions',
     //     rs: 'Estas Seguru?',

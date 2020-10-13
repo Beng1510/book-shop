@@ -3,6 +3,9 @@ body {
     text-align: center;
     color: #3D405B;
 }
+body.rtl {
+    direction: rtl;
+}
 
 h1 {
     margin-top: 30px;
@@ -42,7 +45,9 @@ th {
 }
 
 td {
-    font-size: 1.5em;
+    /* font-size: 1.5em; */
+    font-size: 16px;
+    font-weight: bold;
     padding: 10px;
     background-color: #81B29A;
     border-collapse: collapse;
@@ -124,6 +129,19 @@ footer {
     background-color: #E07A5F;
     border-color: #E07A5F;
     color: #F4F1DE;
+}
+.btn-primary:focus {
+    background-color: #3D405B;
+    border-color: #3D405B;
+    color: #F4F1DE;
+    box-shadow: none;
+}
+
+.btn-primary:active {
+    background-color: #E07A5F;
+    border-color: #E07A5F;
+    color: #F4F1DE;
+    box-shadow: none;
 }
 
 p {

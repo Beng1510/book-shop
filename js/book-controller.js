@@ -7,33 +7,6 @@ function onInit() {
 }
 
 
-// function renderBooks() {
-//     var strHTML = `<table><thead>
-//     <tr><th data-trans="Id">ID</td>
-//     <th data-trans="Title">Title</td>
-//     <th data-trans="Price">Price</td>
-//     <th data-trans="Rating">Rating</td>
-//     <th data-trans="Actions">Actions</td>
-//     </tr></thead>
-//     <tbody>`;
-//     var books = getBooksForDisplay();
-//     books.forEach(function (book) {
-
-//         strHTML += `<tr>
-//         <td>${book.id}</td>
-//         <td>${book.title}</td>
-//         <td>${book.price}</td>
-//         <td>${book.rate}</td>
-//         <td><button  class="btn btn-primary" data-trans="Read" onclick="onReadBook('${book.id}')">Read</button>
-//         <button  class="btn btn-primary" data-trans="Update" onclick="onUpdateBook('${book.id}')">Update</button>
-//         <button  class="btn btn-primary" data-trans="Delete" class="delete-btn" onclick="onRemoveBook(event,'${book.id}')">Delete</button>
-//         </td> </tr>`
-//     })
-
-//     strHTML += `</tbody></table>`;
-//     document.querySelector('.books-container').innerHTML = strHTML;
-// }
-
 function renderBooks() {
     var strHTML = `<table><thead>
     <tr><th onclick="onSetSort('id')" data-trans="Id">ID</td>
@@ -62,9 +35,6 @@ function renderBooks() {
 }
 
 
-
-
-
 function onRemoveBook(ev, bookId) {
     ev.stopPropagation();
     removeBook(bookId)
@@ -77,13 +47,13 @@ function onReadBook(bookId) {
     console.log('book',book);
 
     var elModal = document.querySelector('.modal')
-    // $('.book-modal').show();
     console.log('elModal', elModal);
     elModal.querySelector('.modal-title').innerText = book.title
     elModal.querySelector('h2').innerHTML =  `<img class="card-img-top" src="img/${book.title}.jpg"></img>`
     elModal.querySelector('h3').innerText = 'Book Rating: ' + book.rate
     elModal.querySelector('h4').innerText = 'Price: $' + book.price
     elModal.querySelector('p').innerText = book.desc
+    elModal.querySelector('h6').innerText = 'Genre: ' + book.labels
     
    
     var elRate = document.querySelector('.rate-book')
@@ -99,16 +69,15 @@ function onReadBook(bookId) {
 }
 
 
-
 function onRateHigher(bookId, bookRate) {
     rateHigher(bookId, bookRate)
     renderBooks()
 }
+
 function onRateLower(bookId, bookRate) {
     rateLower(bookId, bookRate)
     renderBooks()
 }
-
 
 function onUpdateBook(bookId) {
     var newPrice = +prompt('Price?');
@@ -116,13 +85,7 @@ function onUpdateBook(bookId) {
     renderBooks()
 }
 
-
-// function onCloseModal() {
-//     $('.modal').hide();
-// }
-
 function onAddBook() {
-    // var elBookTitle = document.querySelector('.add-book select[name=book-name]');
     var elBookName = document.querySelector('.add-book-container input[name=book-name]');
     var elBookPrice = document.querySelector('.add-book-container input[name=book-price]')
     var title = elBookName.value;
@@ -139,7 +102,6 @@ function onAddBook() {
 }
 
 function onRateBook() {
-    // var rate = 0;
     var elBookRate = document.querySelector('.book-modal input[name=book-rate]')
     var newRate = +elBookRate.value;
     console.log('rating', newRate);
@@ -152,8 +114,8 @@ function onRateBook() {
 
 function onSetLang(lang) {
     setLang(lang);
-    // if (lang === 'he') document.body.classList.add('rtl')
-    // else document.body.classList.remove('rtl')
+    if (lang === 'he') document.body.classList.add('rtl')
+    else document.body.classList.remove('rtl')
     renderBooks();
     doTrans();
 }
