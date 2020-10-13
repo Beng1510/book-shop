@@ -17,7 +17,7 @@ function renderBooks() {
     </tr></thead>
     <tbody>`;
     var books = getBooksForDisplay();
-    books.forEach(function (book) {
+    books.forEach((book) => {
 
         strHTML += `<tr>
         <td>${book.id}</td>
@@ -44,22 +44,22 @@ function onRemoveBook(ev, bookId) {
 
 function onReadBook(bookId) {
     var book = getBookById(bookId);
-    console.log('book',book);
+    console.log('book', book);
 
     var elModal = document.querySelector('.modal')
     console.log('elModal', elModal);
     elModal.querySelector('.modal-title').innerText = book.title
-    elModal.querySelector('h2').innerHTML =  `<img class="card-img-top" src="img/${book.title}.jpg"></img>`
-    elModal.querySelector('h3').innerText = 'Book Rating: ' + book.rate
+    elModal.querySelector('h2').innerHTML = `<img class="card-img-top" src="img/${book.title}.jpg"></img>`
+    elModal.querySelector('h3').innerText = 'Book Rating: ' + book.rate + '*'
     elModal.querySelector('h4').innerText = 'Price: $' + book.price
     elModal.querySelector('p').innerText = book.desc
     elModal.querySelector('h6').innerText = 'Genre: ' + book.labels
-    
-   
+
+
     var elRate = document.querySelector('.rate-book')
     elRate.innerHTML =
-    
-    `
+
+        `
     <p>Rate this book:</p> <button class="btn btn-outline-primary"y onclick="onRateHigher('${book.id}','${book.rate}')">+</button>
     <span class="rate">${book.rate}</span>
     <button class="btn btn-outline-primary" onclick="onRateLower('${book.id}','${book.rate}')">-</button>
@@ -124,3 +124,4 @@ function onSetSort(sortBy) {
     sortForDisplay(sortBy)
     renderBooks();
 }
+

@@ -29,7 +29,7 @@ function getBooks() {
 
 
 function removeBook(bookId) {
-    var bookIdx = gBooks.findIndex(function (book) {
+    const bookIdx = gBooks.findIndex((book) => {
         return bookId === book.id
     })
     gBooks.splice(bookIdx, 1)
@@ -38,7 +38,7 @@ function removeBook(bookId) {
 
 
 function addBook(title, price) {
-    var book = _createBook(title, price)
+    const book = _createBook(title, price)
 
     gBooks.unshift(book)
     _saveBooksToStorage()
@@ -48,7 +48,7 @@ function addBook(title, price) {
 
 function getBookById(bookId) {
     console.log('gBooks', gBooks);
-    var book = gBooks.find(function (book) {
+    const book = gBooks.find((book) => {
         return bookId === book.id
     })
     console.log('book', book);
@@ -57,7 +57,7 @@ function getBookById(bookId) {
 
 
 function updateBook(bookId, newPrice) {
-    var bookIdx = gBooks.findIndex(function (book) {
+    const bookIdx = gBooks.findIndex((book) => {
         return book.id === bookId;
     })
     gBooks[bookIdx].price = newPrice;
@@ -68,8 +68,8 @@ function updateBook(bookId, newPrice) {
 function _createBook(title, price) {
     return {
         id: makeId(),
-        title: title,
-        price: price,
+        title,
+        price,
         desc: makeLorem(),
         rate: 0
     }
@@ -155,7 +155,7 @@ function _saveBooksToStorage() {
 
 
 function rateBook(bookId, newRate) {
-    var bookIdx = gBooks.findIndex(function (book) {
+    const bookIdx = gBooks.findIndex((book) => {
         return book.id === bookId;
     })
     gBooks[bookIdx].rate = newRate;
@@ -165,7 +165,7 @@ function rateBook(bookId, newRate) {
 
 function rateHigher(bookId, rate) {
     if (rate >= 10) return
-    var bookIdx = gBooks.find(function (book) {
+    const bookIdx = gBooks.find((book) => {
         return bookId === book.id
     })
     console.log('bookIdx', bookIdx);
@@ -177,7 +177,7 @@ function rateHigher(bookId, rate) {
 
 function rateLower(bookId, rate) {
     if (rate <= 0) return
-    var bookIdx = gBooks.find(function (book) {
+    const bookIdx = gBooks.find((book) => {
         return bookId === book.id
     })
     console.log('bookIdx', bookIdx);
@@ -189,8 +189,8 @@ function rateLower(bookId, rate) {
 
 
 function sortForDisplay(sortBy) {
-    gBooks.sort(function (book1, book2) {
-        var result = (book1[sortBy] < book2[sortBy]) ? -1 : (book1[sortBy] > book2[sortBy]) ? 1 : 0;
+    gBooks.sort((book1, book2) => {
+        const result = (book1[sortBy] < book2[sortBy]) ? -1 : (book1[sortBy] > book2[sortBy]) ? 1 : 0;
         return result;
     })
 }
